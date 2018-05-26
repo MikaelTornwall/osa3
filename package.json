@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node index.js",
-    "watch": "nodemon index.js"
+    "watch": "nodemon index.js",
+    "lint": "eslint ."
   },
   "repository": {
     "type": "git",
@@ -19,10 +20,12 @@
   },
   "homepage": "https://github.com/MikaelTornwall/osa3#readme",
   "devDependencies": {
+    "eslint": "^4.19.1",
     "nodemon": "^1.17.4"
   },
   "dependencies": {
     "cors": "^2.8.4",
+    "dotenv": "^5.0.1",
     "express": "^4.16.3",
     "mongoose": "^5.1.0",
     "morgan": "^1.9.0",
