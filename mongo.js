@@ -16,22 +16,21 @@ const person = new Person({
 })
 
 if (process.argv[2] !== undefined && process.argv[3] !== undefined) {
-person
-.save()
-.then(response => {
-  console.log(`Lisätään henkilö "${person.name}" ja numero "${person.number}" luetteloon.`)
-  mongoose.connection.close()
-})
+  person
+    .save()
+    .then(response => {
+      console.log(`Lisätään henkilö "${person.name}" ja numero "${person.number}" luetteloon.`)
+      mongoose.connection.close()
+    })
 }
 
 if (process.argv[2] === undefined && process.argv[3] === undefined) {
-Person
-.find({})
-.then(result => {
-  console.log("Puhelinluettelo:")
-result.forEach(person => {
-  console.log(person.name, person.number)
-})
-mongoose.connection.close()
-})
+  Person
+    .find({})
+    .then(result => {
+      result.forEach(person => {
+        console.log(person.name, person.number)
+      })
+      mongoose.connection.close()
+    })
 }
