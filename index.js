@@ -80,7 +80,7 @@ app.post('/api/persons', (req, res) => {
     .then(result => {
       console.log('Result is: ', result)
       if (result.length > 0) {
-        return res.status(401).json({ error: `Person with name "${nameToBeAdded}" already exists.` })
+        return res.status(401).json({ error: `Person with name '${nameToBeAdded}' already exists.` })
       } else {
         person
           .save()
